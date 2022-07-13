@@ -13,6 +13,7 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   TextEditingController emailController = TextEditingController();
+  TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
   @override
@@ -48,6 +49,15 @@ class _RegisterPageState extends State<RegisterPage> {
             alignment: Alignment.center,
             margin: const EdgeInsets.symmetric(horizontal: 40),
             child: TextField(
+              controller: usernameController,
+              decoration: const InputDecoration(labelText: "Username"),
+            ),
+          ),
+          SizedBox(height: size.height * 0.03),
+          Container(
+            alignment: Alignment.center,
+            margin: const EdgeInsets.symmetric(horizontal: 40),
+            child: TextField(
               controller: passwordController,
               decoration: const InputDecoration(labelText: "Password"),
               obscureText: true,
@@ -71,6 +81,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   await FirebaseAuth.instance.createUserWithEmailAndPassword(
                     email: emailController.text.trim(),
                     password: passwordController.text.trim(),
+                  );
+                  FirebaseAuth.instance.currentUser!.updateDisplayName(
+                    usernameController.text.trim(),
                   );
                 } on FirebaseAuthException catch (e) {
                   showErrorDialog(e.message!);

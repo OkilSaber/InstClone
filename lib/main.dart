@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:instaclone/Auth/auth_switch.dart';
 import 'package:instaclone/Auth/user.dart';
+import 'package:instaclone/main_screen.dart';
 import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -40,7 +41,7 @@ class _StartPageState extends State<StartPage> {
       builder: (context, snapshot) {
         print(snapshot);
         if (snapshot.hasData) {
-          return UserPage(user: snapshot.data!);
+          return const MainScreen();
         } else {
           return const AuthSwitch();
         }
