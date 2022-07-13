@@ -20,6 +20,22 @@ class _FeedState extends State<Feed> {
         ),
         elevation: 0,
         backgroundColor: Colors.grey.shade200,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.notifications,
+              color: Colors.black,
+            ),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.send_rounded,
+              color: Colors.black,
+            ),
+          ),
+        ],
       ),
       body: const Center(),
     );
