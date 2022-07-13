@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instaclone/Auth/explorer.dart';
 import 'package:instaclone/Auth/user.dart';
 import 'package:instaclone/feed.dart';
 
@@ -14,6 +15,7 @@ class _MainScreenState extends State<MainScreen> {
 
   final List<Widget> _widgetOptions = <Widget>[
     const Feed(),
+    const ExplorerPage(),
     UserPage(),
   ];
 
@@ -29,8 +31,9 @@ class _MainScreenState extends State<MainScreen> {
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
+          BottomNavigationBarItem(icon: Icon(Icons.home_rounded), label: ""),
+          BottomNavigationBarItem(icon: Icon(Icons.search_rounded), label: ""),
+          BottomNavigationBarItem(icon: Icon(Icons.person_rounded), label: ""),
         ],
         elevation: 0,
         iconSize: 30,
