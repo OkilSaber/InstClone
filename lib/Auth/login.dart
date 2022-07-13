@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -63,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
           Container(
             alignment: Alignment.centerRight,
             margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-            child: ElevatedButton(
+            child: CupertinoButton.filled(
               onPressed: () async {
                 try {
                   await FirebaseAuth.instance.signInWithEmailAndPassword(

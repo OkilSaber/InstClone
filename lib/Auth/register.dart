@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -74,23 +75,18 @@ class _RegisterPageState extends State<RegisterPage> {
           Container(
             alignment: Alignment.centerRight,
             margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-            child: ElevatedButton(
+            child: CupertinoButton.filled(
               onPressed: () async {
                 try {
                   await FirebaseAuth.instance.createUserWithEmailAndPassword(
-                    email: emailController.text,
-                    password: passwordController.text,
+                    email: emailController.text.trim(),
+                    password: passwordController.text.trim(),
                   );
                   FirebaseAuth.instance.currentUser!.updateDisplayName(
                     usernameController.text.trim(),
                   );
                 } on FirebaseAuthException catch (e) {
-                  if (e.code == 'weak-password') {
-                    showErrorDialog('The password provided is too weak.');
-                  } else if (e.code == 'email-already-in-use') {
-                    showErrorDialog(
-                        'The account already exists for that email.');
-                  }
+                  showErrorDialog(e.message!);
                 } catch (e) {
                   showErrorDialog(e.toString());
                 }
