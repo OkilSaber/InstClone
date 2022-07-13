@@ -13,7 +13,7 @@ class _FeedState extends State<Feed> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Home",
+          "InstaClone",
           style: TextStyle(
             color: Colors.black,
           ),
