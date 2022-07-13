@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:instaclone/Auth/auth_switch.dart';
-import 'package:instaclone/Auth/user.dart';
 import 'package:instaclone/main_screen.dart';
 import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
