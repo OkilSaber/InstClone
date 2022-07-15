@@ -15,6 +15,13 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController passwordController = TextEditingController();
 
   @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
@@ -40,6 +47,7 @@ class _LoginPageState extends State<LoginPage> {
             child: TextField(
               controller: emailController,
               decoration: const InputDecoration(labelText: "Email"),
+              keyboardType: TextInputType.emailAddress,
             ),
           ),
           SizedBox(height: size.height * 0.03),

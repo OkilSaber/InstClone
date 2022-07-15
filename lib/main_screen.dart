@@ -16,7 +16,7 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _widgetOptions = <Widget>[
     const Feed(),
     const ExplorerPage(),
-    UserPage(),
+    const UserPage(),
   ];
 
   void _onItemTapped(int index) {
