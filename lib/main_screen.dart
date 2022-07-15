@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instaclone/Auth/explorer.dart';
-import 'package:instaclone/Auth/user.dart';
+import 'package:instaclone/User/user.dart';
 import 'package:instaclone/feed.dart';
 
 class MainScreen extends StatefulWidget {

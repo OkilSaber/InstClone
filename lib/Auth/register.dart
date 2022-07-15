@@ -44,7 +44,6 @@ class _RegisterPageState extends State<RegisterPage> {
               decoration: const InputDecoration(labelText: "Email"),
             ),
           ),
-          SizedBox(height: size.height * 0.03),
           Container(
             alignment: Alignment.center,
             margin: const EdgeInsets.symmetric(horizontal: 40),
@@ -85,6 +84,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   FirebaseAuth.instance.currentUser!.updateDisplayName(
                     usernameController.text.trim(),
                   );
+                  // FirebaseAuth.instance.currentUser!.updatePhotoURL();
                 } on FirebaseAuthException catch (e) {
                   showErrorDialog(e.message!);
                 } catch (e) {
